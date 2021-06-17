@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=sandbox
+POSTGRES_USER=eISzkFLOKdPbnEYNAsLnKcLtewFmtYpW
+POSTGRES_PASSWORD=NZFS5Cxe0xrHchfm25iB7VlfmdAPRbjIoXeT5CH0V9fgOkZeAj9eCAOrps2z081g
