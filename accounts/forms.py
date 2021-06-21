@@ -20,8 +20,8 @@ class RegisterForm(forms.ModelForm):
         )
         # ウィジェットを上書き
         widgets = {
-            "username": forms.TextInput(attrs={"placeholder": "ユーザー名"}),
-            "password": forms.PasswordInput(attrs={"placeholder": "パスワード"}),
+            "username": forms.TextInput(attrs={"placeholder": "username"}),
+            "password": forms.PasswordInput(attrs={"placeholder": "password"}),
         }
 
     password2 = forms.CharField(
@@ -64,15 +64,15 @@ class LoginForm(forms.Form):
     """ログイン画面用のフォーム"""
 
     username = UsernameField(
-        label="ユーザー名",
+        label="username",
         max_length=255,
-        widget=forms.TextInput(attrs={"placeholder": "ユーザー名", "autofocus": True}),
+        widget=forms.TextInput(attrs={"placeholder": "username", "autofocus": True}),
     )
 
     password = forms.CharField(
-        label="パスワード",
+        label="password",
         strip=False,
-        widget=forms.PasswordInput(attrs={"placeholder": "パスワード"}, render_value=True),
+        widget=forms.PasswordInput(attrs={"placeholder": "password"}, render_value=True),
     )
 
     def __init__(self, *args, **kwargs):

@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: ./compose/local/postgres/Dockerfile
-    image: sandbox_local_postgres
-    container_name: sandbox_local_postgres
+    image: local_postgres
+    container_name: local_postgres
     volumes:
       - ./db:/var/lib/postgresql/data
     env_file:
@@ -16,8 +16,8 @@ services:
     build:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
-    image: sandbox_local_django
-    container_name: sandbox_local_django
+    image: local_django
+    container_name: local_django
     stdin_open: true
     depends_on:
       - postgres
@@ -28,3 +28,14 @@ services:
       - ./.envs/.local/.postgres
     ports:
       - "8000:8000"
+
+  imagenet:
+    build:
+      context: .
+      dockerfile: ./compose/local/imagenet/Dockerfile
+    image: local_imagenet
+    container_name: local_imagenet
+    volumes:
+      - .:/app
+    env_file:
+      - ./.envs/.local/.imagenet
